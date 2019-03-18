@@ -1,0 +1,292 @@
+html, body {
+    height:100%;
+    width: 100%;
+    margin:0;
+    background-color: lightgrey;
+    font-family: 'FuturaLTPro-Heavy';
+}
+
+/*  fullsize DIV, takes entire screensize of respective item
+    Use for background color, etc.*/
+.fullsize {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/*  main wrapper of every page
+    Use wrapper, float-wrapper, content, menu and footer for every page to have an responsive design */
+
+/*  wrapper contains all element
+    margin: 50px to reduce all side
+    height: entire screen height - 2x 50px (margin-top and margin-bottom) */
+
+.wrapper {
+    width: auto;
+    height: calc(100% - 6em);
+    margin: 3em;
+}
+
+/*  wrapper for content and menu page
+    height: entire height of wrapper div - 70px (height of footer)*/
+.float-wrapper {
+    width: auto;
+    height: calc(100% - 70px);
+    margin: 1em 0 0 0;
+}
+
+/*  content div
+    height: entire float wrapper div height
+    width: entire float wrapper div width - 20px (width of menu) */
+.content {
+    height: 100%;
+    width: calc(100% - 20px);
+    float: left;
+}
+
+/*  menu div
+    floats right next to content div
+    height: entire height of float wrapper div
+    text orientation vertically*/
+.menu {
+    cursor: default;
+    width: 1.25em;
+    height: 100%;
+    float: right;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+}
+/*  statement div
+    formats home page statements
+*/
+.statement {
+    font-size: 1.5em;
+    line-height: 1.5;
+    transition: 0.5s;
+}
+
+/*  footer for infos
+    sits below float wrapper
+    height: 70px*/
+.footer {
+    height: 4.375em;
+}
+
+/*  OBJECTS */
+
+/*  progress bar is displayed via an own div*/
+#progress-bar {
+    height: 0.125em;
+    left: 0;
+    right: 0;
+    background: #FFFF00;
+}
+
+.social-media {
+    margin-bottom: 0;
+    margin-right: 0;
+    display: inline-block;
+    float: right;
+}
+
+.social-media-icon {
+    width: 20px;
+    height: 20px;
+    cursor: default;
+    margin-left: 4px;
+    -webkit-filter: opacity(.5);
+    filter: opacity(.5);
+}
+
+.social-media-icon:hover {
+    cursor: default;
+    -webkit-filter: opacity(1);
+    filter: opacity(1);
+}
+
+/*  loaded is another div with has a animation overlaying the progress bar*/
+#loaded {
+    height: 100%;
+    width: 100%;
+    background: #444;
+    animation: 3s linear loading;
+    transform-origin: 0%;
+}
+
+/*  animation for loading bar */
+@keyframes loading {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(100%);
+    }
+}
+
+
+
+/* COLORS */
+.yellow {
+    background-color: yellow;
+}
+
+.lightgrey {
+    background-color: rgb(238, 238, 238);
+}
+
+.white {
+    background-color: white;
+}
+
+/*  TEXT */
+.text {
+    font-family: 'IBM Plex Mono' !important;
+    font-size: 0.875em;
+    line-height: 1.25em;
+}
+
+.clickable {
+    display: inline-block;     
+    position: relative;    
+    z-index: 2;     
+    padding: 2em;     
+    margin: -2em;
+    color: #000;
+    cursor: default; 
+}
+
+hr {
+    display: block;
+    height: 1px;
+    width: 2em;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.link {
+    color:black;
+    text-decoration: none;
+    cursor: default;
+}
+
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/*  IMAGES */
+#df-logo {
+    width: 30%;
+    height: 30%;
+}
+
+/*  MEDIA RESPONSIVE*/
+@media only screen and (max-width : 37.500em) {
+    .wrapper {
+        margin: 0.625em;
+        height: calc(100% - 1.25em);
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    .statement {
+       font-size: 1.5em;
+       }
+   }
+   /* Small devices (landscape phones, 576px and up) */
+   @media (max-width: 576px) { 
+       .statement {
+           position: absolute;
+           top: 33%;
+           line-height: 2;
+          }
+      }
+   
+   /* Large devices (desktops, 992px and up) */
+   @media (min-width: 992px) {
+    .statement {
+       font-size: 3em;
+       }
+   }
+   
+   /* Extra large devices (large desktops, 1200px and up) */
+   @media (min-width: 1200px) {
+    .statement {
+       font-size: 3em;
+       }
+   }
+
+
+/* TYPEWRITER */
+
+.typewriter {
+  border-right: 4px solid black;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
+
+/* OVERLAY */
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    text-decoration: none;
+    color: #000000;
+    display: inline-block; /* Display block instead of inline */
+    clear:both;
+    float:left;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .navigation a:hover, .overlay a:focus {
+     background-color: #FFFFFF;
+  }
+
+/*  FONTS */
+@font-face {
+    font-family: 'IBM Plex Mono'; 
+    src: url('../font/Web/IBM-Plex-Mono/fonts/complete/woff2/IBMPlexMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'FuturaLTPro-Heavy';
+    src: url('../font/Web/Futura/387439_0_0.eot');
+    src: url('../font/Web/Futura/387439_0_0.eot?#iefix') format('embedded-opentype'),url('../font/Web/Futura/387439_0_0.woff2') format('woff2'),url('../font/Web/Futura/387439_0_0.woff') format('woff'),url('../font/Web/Futura/387439_0_0.ttf') format('truetype');
+}
