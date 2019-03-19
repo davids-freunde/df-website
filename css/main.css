@@ -214,28 +214,35 @@ hr {
        font-size: 1.5em;
        }
    }
-   /* Small devices (landscape phones, 576px and up) */
-   @media (max-width: 576px) { 
-       .statement {
-           position: absolute;
-           top: 33%;
-           line-height: 2;
-          }
-      }
    
-   /* Large devices (desktops, 992px and up) */
-   @media (min-width: 992px) {
+@media (max-height: 400px) { 
+    .statement {
+        font-size: 1em;
+        top: 1em !important;
+    }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) { 
+   .statement {
+       position: absolute;
+       top: 25%;
+       line-height: 2;
+    }
+}
+   
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
     .statement {
        font-size: 3em;
-       }
-   }
+    }
+}
    
-   /* Extra large devices (large desktops, 1200px and up) */
-   @media (min-width: 1200px) {
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
     .statement {
        font-size: 3em;
-       }
-   }
+    }
+}
 
 
 /* TYPEWRITER */
@@ -269,7 +276,6 @@ hr {
   .overlay a {
     text-decoration: none;
     color: #000000;
-    display: inline-block; /* Display block instead of inline */
     clear:both;
     float:left;
   }
